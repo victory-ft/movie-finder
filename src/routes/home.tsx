@@ -4,7 +4,7 @@ import Loader from "../components/loader";
 import axios from "axios";
 import ShowTab from "../components/showtab";
 import arrowIcon from "/icons/arrow-right.svg";
-import options from "../apiOptions";
+import options from "../apiOptions/apiOptions";
 
 import "../styles/home.scss";
 
