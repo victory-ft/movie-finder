@@ -1,5 +1,6 @@
 // import React from "react";
 import { useEffect, useState } from "react";
+import MultipleObserver from "../components/multipleObserver";
 import Loader from "../components/loader";
 import axios from "axios";
 import ShowTab from "../components/showtab";
@@ -10,7 +11,7 @@ import "../styles/home.scss";
 
 const Home = () => {
 	const apiOptions: any = options;
-	console.log(apiOptions);
+	// console.log(apiOptions);
 
 	const [isLoading, setIsLoading] = useState(true);
 	const [isTrendingLoading, setIsTrendingLoading] = useState(true);
@@ -98,7 +99,7 @@ const Home = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{movies.map((movie: any) => {
 							return (
 								<ShowTab
@@ -111,7 +112,7 @@ const Home = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 			{isTvShowLoading ? (
@@ -124,7 +125,7 @@ const Home = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{tvShows.map((show: any) => {
 							return (
 								<ShowTab
@@ -137,7 +138,7 @@ const Home = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 			{isTrendingLoading ? (
@@ -150,7 +151,7 @@ const Home = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{trending.map((show: any) => {
 							return (
 								<ShowTab
@@ -167,7 +168,7 @@ const Home = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 		</main>

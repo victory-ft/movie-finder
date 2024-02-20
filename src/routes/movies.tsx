@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import MultipleObserver from "../components/multipleObserver";
 import Loader from "../components/loader";
 import axios from "axios";
 import ShowTab from "../components/showtab";
@@ -24,6 +26,12 @@ const Movies = () => {
 	const [fantasy, setFantasy] = useState([]);
 	const [romance, setRomance] = useState([]);
 	const [science, setScience] = useState([]);
+
+	const { ref, inView } = useInView({
+		/* Optional options */
+		threshold: 0.1,
+		triggerOnce: true,
+	});
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -125,7 +133,7 @@ const Movies = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{action.map((movie: any) => {
 							return (
 								<ShowTab
@@ -138,7 +146,7 @@ const Movies = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 
@@ -152,7 +160,7 @@ const Movies = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{adventure.map((movie: any) => {
 							return (
 								<ShowTab
@@ -165,7 +173,7 @@ const Movies = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 
@@ -179,7 +187,7 @@ const Movies = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{animation.map((movie: any) => {
 							return (
 								<ShowTab
@@ -192,7 +200,7 @@ const Movies = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 
@@ -206,7 +214,7 @@ const Movies = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{comedy.map((movie: any) => {
 							return (
 								<ShowTab
@@ -219,7 +227,7 @@ const Movies = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 
@@ -233,7 +241,7 @@ const Movies = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{drama.map((movie: any) => {
 							return (
 								<ShowTab
@@ -246,7 +254,7 @@ const Movies = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 
@@ -260,7 +268,7 @@ const Movies = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{fantasy.map((movie: any) => {
 							return (
 								<ShowTab
@@ -273,7 +281,7 @@ const Movies = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 
@@ -287,7 +295,7 @@ const Movies = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{romance.map((movie: any) => {
 							return (
 								<ShowTab
@@ -300,7 +308,7 @@ const Movies = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 
@@ -314,7 +322,7 @@ const Movies = () => {
 							<p>See all</p>
 						</button>
 					</div>
-					<div className="tab-container">
+					<MultipleObserver>
 						{science.map((movie: any) => {
 							return (
 								<ShowTab
@@ -327,7 +335,7 @@ const Movies = () => {
 								/>
 							);
 						})}
-					</div>
+					</MultipleObserver>
 				</div>
 			)}
 		</>

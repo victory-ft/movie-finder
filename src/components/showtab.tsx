@@ -22,7 +22,7 @@ const ShowTab = ({
 	return (
 		<Link to="" className="show">
 			<div className="show">
-				<img src={image} alt="" />
+				<img src={image} alt={name} />
 				<div className="show-info">
 					<div className="actions">
 						<img src={play} alt="play" />

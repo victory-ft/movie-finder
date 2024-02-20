@@ -1,5 +1,6 @@
 import movieOptions from "./movieOptions";
 import AUTH from "../../variables";
+import shows from "./tvShowOptions";
 
 const auth = AUTH;
 const movieLink =
@@ -35,6 +36,10 @@ const options: Object = {
 
 	movies: {
 		...movieOptions,
+	},
+
+	shows: {
+		...shows,
 	},
 };
 

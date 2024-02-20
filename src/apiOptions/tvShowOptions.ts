@@ -5,7 +5,7 @@ const auth = AUTH;
 const showLink =
 	"https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc";
 
-const options: Object = {
+const shows: Object = {
 	actionAdventure: {
 		method: "GET",
 		url: `${showLink}&with_genres=10759`,
@@ -71,7 +71,7 @@ const options: Object = {
 
 	scifiFantasy: {
 		method: "GET",
-		url: `${showLink}&with_genres=878`,
+		url: `${showLink}&with_genres=10765`,
 		headers: {
 			accept: "application/json",
 			Authorization: auth,
@@ -88,4 +88,4 @@ const options: Object = {
 	},
 };
 
-export default options;
+export default shows;

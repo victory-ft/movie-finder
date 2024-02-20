@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "../variables";
 
 // .home-main-content {
@@ -13,7 +14,6 @@
 	padding: 0 3rem;
 	border-top: 2px solid $secondary;
 	border-bottom: 2px solid $secondary;
-	// max-width: 2000px;
 }
 
 .home-tabs {
@@ -32,6 +32,14 @@
 		justify-content: space-between;
 		transition: 0.2s background-color ease-in-out;
 		cursor: pointer;
+
+		&:nth-child(1) {
+			border-left: none;
+		}
+
+		&:nth-child(3) {
+			border-right: none;
+		}
 
 		&:hover {
 			background-color: $accent;
@@ -103,10 +111,26 @@
 		justify-content: space-between;
 		grid-gap: 15px;
 
+			&.in-view {
+				.show {
+					transform: translateY(0px);
+					opacity: 1;
+
+					@for $i from 1 through 20 {
+						&:nth-child(#{$i}) {
+							transition-delay: 0.1s * $i;
+						}
+					}
+				}
+			
+		}
+
 		.show {
 			transition: scale 0.3s ease-in-out;
 			cursor: pointer;
 			position: relative;
+			opacity: 0;
+				transform: translateY(50px);
 
 			.show-info {
 				display: flex;
