@@ -44,18 +44,20 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization: import.meta.env.VITE_AUTH,
+			Authorization:
+				"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y",
 		},
 	};
 
-	console.log(import.meta.env.VITE_AUTH + "sjsjsj");
+	// console.log("Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y" + "sjsjsj");
 
 	const creditOptions = {
 		method: "GET",
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/credits?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization: import.meta.env.VITE_AUTH,
+			Authorization:
+				"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y",
 		},
 	};
 
@@ -64,7 +66,8 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/images?include_image_language=en%2Cnull`,
 		headers: {
 			accept: "application/json",
-			Authorization: import.meta.env.VITE_AUTH,
+			Authorization:
+				"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y",
 		},
 	};
 
@@ -73,7 +76,8 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/videos?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization: import.meta.env.VITE_AUTH,
+			Authorization:
+				"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y",
 		},
 	};
 
@@ -82,7 +86,8 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/recommendations?language=en-US&page=1`,
 		headers: {
 			accept: "application/json",
-			Authorization: import.meta.env.VITE_AUTH,
+			Authorization:
+				"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y",
 		},
 	};
 
