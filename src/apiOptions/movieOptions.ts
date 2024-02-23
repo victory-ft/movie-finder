@@ -11,7 +11,7 @@ const movieOptions: Object = {
 		url: `${movieLink}&with_genres=28`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -20,7 +20,7 @@ const movieOptions: Object = {
 		url: `${movieLink}&with_genres=12`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -29,7 +29,7 @@ const movieOptions: Object = {
 		url: `${movieLink}&with_genres=16`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -38,7 +38,7 @@ const movieOptions: Object = {
 		url: `${movieLink}&with_genres=35`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -47,7 +47,7 @@ const movieOptions: Object = {
 		url: `${movieLink}&with_genres=18`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -56,7 +56,7 @@ const movieOptions: Object = {
 		url: `${movieLink}&with_genres=14`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -65,7 +65,7 @@ const movieOptions: Object = {
 		url: `${movieLink}&with_genres=10749`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -74,7 +74,7 @@ const movieOptions: Object = {
 		url: `${movieLink}&with_genres=878`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 };

@@ -15,7 +15,7 @@ const Search = () => {
 		url: `https://api.themoviedb.org/3/search/multi?query=${searchTerm}&include_adult=false&language=en-US&page=1`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	};
 

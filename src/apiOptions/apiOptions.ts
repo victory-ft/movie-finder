@@ -12,7 +12,7 @@ const options: Object = {
 		url: movieLink,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -21,7 +21,7 @@ const options: Object = {
 		url: "https://api.themoviedb.org/3/discover/tv?first_air_date.gte=2008-01-01&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -30,7 +30,7 @@ const options: Object = {
 		url: "https://api.themoviedb.org/3/trending/all/day?language=en-US",
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 

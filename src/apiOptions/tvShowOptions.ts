@@ -11,7 +11,7 @@ const shows: Object = {
 		url: `${showLink}&with_genres=10759`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -20,7 +20,7 @@ const shows: Object = {
 		url: `${showLink}&with_genres=16`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -29,7 +29,7 @@ const shows: Object = {
 		url: `${showLink}&with_genres=35`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -38,7 +38,7 @@ const shows: Object = {
 		url: `${showLink}&with_genres=99`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -47,7 +47,7 @@ const shows: Object = {
 		url: `${showLink}&with_genres=18`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -56,7 +56,7 @@ const shows: Object = {
 		url: `${showLink}&with_genres=10751`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -65,7 +65,7 @@ const shows: Object = {
 		url: `${showLink}&with_genres=10763`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -74,7 +74,7 @@ const shows: Object = {
 		url: `${showLink}&with_genres=10765`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 
@@ -83,7 +83,7 @@ const shows: Object = {
 		url: `${showLink}&with_genres=10766`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	},
 };

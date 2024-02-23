@@ -44,16 +44,18 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	};
+
+	console.log(import.meta.env.VITE_AUTH + "sjsjsj");
 
 	const creditOptions = {
 		method: "GET",
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/credits?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	};
 
@@ -62,7 +64,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/images?include_image_language=en%2Cnull`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	};
 
@@ -71,7 +73,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/videos?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	};
 
@@ -80,7 +82,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/recommendations?language=en-US&page=1`,
 		headers: {
 			accept: "application/json",
-			Authorization: process.env.AUTH,
+			Authorization: import.meta.env.VITE_AUTH,
 		},
 	};
 
