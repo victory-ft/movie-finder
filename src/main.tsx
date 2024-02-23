@@ -8,6 +8,7 @@ import Series from "./routes/series.js";
 import Profile from "./routes/profile.js";
 import ErrorPage from "./error-page.jsx";
 import "./main.scss";
+import Details from "./routes/details.js";
 
 const router = createBrowserRouter([
 	{
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
 			{
 				path: "/profile",
 				element: <Profile />,
+			},
+			{
+				path: "/details/:media/:id",
+				element: <Details />,
 			},
 		],
 	},

@@ -2,10 +2,11 @@
 
 @font-face {
 	font-family: "Outfit";
-	src: url(../fonts/Outfit.ttf) format("opentype");
+	src: url("/fonts/Outfit.ttf") format("opentype");
 }
 
 html {
+	// scroll-behavior: smooth;
 	font-family: "Outfit";
 }
 

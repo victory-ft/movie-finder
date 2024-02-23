@@ -14,6 +14,7 @@ const Home = () => {
 	// console.log(apiOptions);
 
 	const [isLoading, setIsLoading] = useState(true);
+	const [errorMessage, setErrorMessage] = useState("");
 	const [isTrendingLoading, setIsTrendingLoading] = useState(true);
 	const [isTvShowLoading, setIsTvShowLoading] = useState(true);
 	const [movies, setMovies] = useState([]);
@@ -21,13 +22,14 @@ const Home = () => {
 	const [trending, setTrending] = useState([]);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		const fetchData = async () => {
 			try {
 				const response = await axios.request(apiOptions.popular);
 				setMovies(response.data.results);
 				setIsLoading(false);
 			} catch (error) {
-				setIsLoading(false);
+				// setIsLoading(false);
 				console.error(error);
 			}
 
@@ -36,7 +38,7 @@ const Home = () => {
 				setTvShows(response.data.results);
 				setIsTvShowLoading(false);
 			} catch (error) {
-				setIsTvShowLoading(false);
+				// setIsTvShowLoading(false);
 				console.error(error);
 			}
 
@@ -44,9 +46,10 @@ const Home = () => {
 				const response = await axios.request(apiOptions.trending);
 				setTrending(response.data.results);
 				setIsTrendingLoading(false);
-			} catch (error) {
-				setIsTrendingLoading(false);
-				console.error(error);
+			} catch (error: any) {
+				// setIsTrendingLoading(false);
+				console.log(error.message);
+				setErrorMessage(error.message);
 			}
 		};
 		fetchData();
@@ -104,6 +107,7 @@ const Home = () => {
 							return (
 								<ShowTab
 									key={movie.id}
+									id={movie.id}
 									name={movie.title}
 									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
 									showType="Movie"
@@ -130,9 +134,10 @@ const Home = () => {
 							return (
 								<ShowTab
 									key={show.id}
+									id={show.id}
 									name={show.name}
 									image={`https://image.tmdb.org/t/p/w300${show.poster_path}`}
-									showType="Show"
+									showType="TV Series"
 									releaseYear={show.first_air_date.slice(0, 4)}
 									// endYear="2019"
 								/>
@@ -156,9 +161,10 @@ const Home = () => {
 							return (
 								<ShowTab
 									key={show.id}
+									id={show.id}
 									name={show.name ? show.name : show.title}
 									image={`https://image.tmdb.org/t/p/w300${show.poster_path}`}
-									showType={show.media_type === "movie" ? "Movie" : "Show"}
+									showType={show.media_type === "movie" ? "Movie" : "TV Series"}
 									releaseYear={
 										show.first_air_date
 											? show.first_air_date.slice(0, 4)

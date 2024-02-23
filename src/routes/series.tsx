@@ -37,13 +37,14 @@ const Series = () => {
 	});
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		const fetchData = async () => {
 			try {
 				const response = await axios.request(apiOptions.shows.actionAdventure);
 				setAction(response.data.results);
 				setIsActionLoading(false);
 			} catch (error) {
-				setIsActionLoading(false);
+				// setIsActionLoading(false);
 				console.error(error);
 			}
 
@@ -52,7 +53,7 @@ const Series = () => {
 				setAnimation(response.data.results);
 				setIsAnimationLoading(false);
 			} catch (error) {
-				setIsActionLoading(false);
+				// setIsActionLoading(false);
 				console.error(error);
 			}
 
@@ -61,7 +62,7 @@ const Series = () => {
 				setComedy(response.data.results);
 				setIsComedyLoading(false);
 			} catch (error) {
-				setIsComedyLoading(false);
+				// setIsComedyLoading(false);
 				console.error(error);
 			}
 
@@ -70,7 +71,7 @@ const Series = () => {
 				setDrama(response.data.results);
 				setIsDramaLoading(false);
 			} catch (error) {
-				setIsDramaLoading(false);
+				// setIsDramaLoading(false);
 				console.error(error);
 			}
 
@@ -79,7 +80,7 @@ const Series = () => {
 				setDocumentary(response.data.results);
 				setIsDocumentaryLoading(false);
 			} catch (error) {
-				setIsDocumentaryLoading(false);
+				// setIsDocumentaryLoading(false);
 				console.error(error);
 			}
 
@@ -88,7 +89,7 @@ const Series = () => {
 				setFamily(response.data.results);
 				setIsFamilyLoading(false);
 			} catch (error) {
-				setIsFamilyLoading(false);
+				// setIsFamilyLoading(false);
 				console.error(error);
 			}
 
@@ -97,7 +98,7 @@ const Series = () => {
 				setScience(response.data.results);
 				setIsScienceLoading(false);
 			} catch (error) {
-				setIsScienceLoading(false);
+				// setIsScienceLoading(false);
 				console.error(error);
 			}
 
@@ -106,7 +107,7 @@ const Series = () => {
 				setSoap(response.data.results);
 				setIsSoapLoading(false);
 			} catch (error) {
-				setIsSoapLoading(false);
+				// setIsSoapLoading(false);
 				console.error(error);
 			}
 
@@ -115,7 +116,7 @@ const Series = () => {
 				setNews(response.data.results);
 				setIsNewsLoading(false);
 			} catch (error) {
-				setIsNewsLoading(false);
+				// setIsNewsLoading(false);
 				console.error(error);
 			}
 		};
@@ -140,7 +141,7 @@ const Series = () => {
 			) : (
 				<div className="show-tabs">
 					<div className="tab-info">
-						<h2>Action</h2>
+						<h2>Action & Adventure</h2>
 						<button className="secondary">
 							<p>See all</p>
 						</button>
@@ -153,9 +154,10 @@ const Series = () => {
 							return (
 								<ShowTab
 									key={movie.id}
+									id={movie.id}
 									name={movie.name}
 									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-									showType="Show"
+									showType="TV Series"
 									releaseYear={movie.first_air_date.slice(0, 4)}
 									// endYear="2019"
 								/>
@@ -164,33 +166,6 @@ const Series = () => {
 					</div>
 				</div>
 			)}
-
-			{/* {isAnimationLoading ? (
-				<Loader />
-			) : (
-				<div className="show-tabs">
-					<div className="tab-info">
-						<h2>Animation</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
-					</div>
-					<MultipleObserver>
-						{animation.map((movie: any) => {
-							return (
-								<ShowTab
-									key={movie.id}
-									name={movie.name}
-									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-									showType="Show"
-									releaseYear={movie.first_air_date.slice(0, 4)}
-									// endYear="2019"
-								/>
-							);
-						})}
-					</MultipleObserver>
-				</div>
-			)} */}
 
 			{isAnimationLoading ? (
 				<Loader />
@@ -207,9 +182,10 @@ const Series = () => {
 							return (
 								<ShowTab
 									key={movie.id}
+									id={movie.id}
 									name={movie.name}
 									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-									showType="Show"
+									showType="TV Series"
 									releaseYear={movie.first_air_date.slice(0, 4)}
 									// endYear="2019"
 								/>
@@ -234,9 +210,10 @@ const Series = () => {
 							return (
 								<ShowTab
 									key={movie.id}
+									id={movie.id}
 									name={movie.name}
 									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-									showType="Show"
+									showType="TV Series"
 									releaseYear={movie.first_air_date.slice(0, 4)}
 									// endYear="2019"
 								/>
@@ -261,9 +238,10 @@ const Series = () => {
 							return (
 								<ShowTab
 									key={movie.id}
+									id={movie.id}
 									name={movie.name}
 									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-									showType="Show"
+									showType="TV Series"
 									releaseYear={movie.first_air_date.slice(0, 4)}
 									// endYear="2019"
 								/>
@@ -288,9 +266,10 @@ const Series = () => {
 							return (
 								<ShowTab
 									key={movie.id}
+									id={movie.id}
 									name={movie.name}
 									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-									showType="Show"
+									showType="TV Series"
 									releaseYear={movie.first_air_date.slice(0, 4)}
 									// endYear="2019"
 								/>
@@ -315,9 +294,10 @@ const Series = () => {
 							return (
 								<ShowTab
 									key={movie.id}
+									id={movie.id}
 									name={movie.name}
 									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-									showType="Show"
+									showType="TV Series"
 									releaseYear={movie.first_air_date.slice(0, 4)}
 									// endYear="2019"
 								/>
@@ -342,9 +322,10 @@ const Series = () => {
 							return (
 								<ShowTab
 									key={movie.id}
+									id={movie.id}
 									name={movie.name}
 									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-									showType="Show"
+									showType="TV Series"
 									releaseYear={movie.first_air_date.slice(0, 4)}
 									// endYear="2019"
 								/>
@@ -368,9 +349,10 @@ const Series = () => {
 							return (
 								<ShowTab
 									key={movie.id}
+									id={movie.id}
 									name={movie.name}
 									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-									showType="Show"
+									showType="TV Series"
 									releaseYear={movie.first_air_date.slice(0, 4)}
 									// endYear="2019"
 								/>
@@ -394,9 +376,10 @@ const Series = () => {
 							return (
 								<ShowTab
 									key={movie.id}
+									id={movie.id}
 									name={movie.name}
 									image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-									showType="Show"
+									showType="TV Series"
 									releaseYear={movie.first_air_date.slice(0, 4)}
 									// endYear="2019"
 								/>

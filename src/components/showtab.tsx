@@ -10,6 +10,7 @@ interface ShowTabProps {
 	showType: string;
 	releaseYear: string;
 	endYear?: string;
+	id: string;
 }
 
 const ShowTab = ({
@@ -18,11 +19,13 @@ const ShowTab = ({
 	showType,
 	releaseYear,
 	endYear,
+	id,
 }: ShowTabProps) => {
+	const media = showType === "Movie" ? "movie" : "tv";
 	return (
-		<Link to="" className="show">
+		<Link to={`/details/${media}/${id}`} className="show">
 			<div className="show">
-				<img src={image} alt={name} />
+				<img src={image} alt={name} className="poster" />
 				<div className="show-info">
 					<div className="actions">
 						<img src={play} alt="play" />
