@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
@@ -7,11 +7,13 @@ import "swiper/css/pagination";
 import Loader from "../components/loader";
 import YouTubeEmbed from "../components/youtubeEmbed";
 import ShowTab from "../components/showtab";
+import SeasonTab from "../components/seasonTab";
 import MultipleObserver from "../components/multipleObserver";
 import axios from "axios";
 import AUTH from "../../variables";
 import star from "/icons/star.svg";
 import "../styles/details.scss";
+import SeasonInfo from "../components/seasonInfo";
 
 const Details = () => {
 	const auth: string = AUTH;
@@ -30,6 +32,12 @@ const Details = () => {
 	const [isCreditLoading, setIsCreditLoading] = useState(true);
 	const [isVideoLoading, setIsVideoLoading] = useState(true);
 	const [isSimilarLoading, setIsSimilarLoading] = useState(true);
+
+	const [seasonModal, showSeasonModal] = useState(false);
+
+	const [seasonData, setSeasonData] = useState({});
+
+	const ref = useRef<any>(null);
 
 	const options = {
 		method: "GET",
@@ -80,7 +88,7 @@ const Details = () => {
 		// window.scrollTo(0, 0);
 		const fetchData = async () => {
 			try {
-				setIsLoading(true);
+				// setIsLoading(true);
 				const response = await axios.request(options);
 				setMedia(response.data);
 				console.log(response.data);
@@ -90,7 +98,7 @@ const Details = () => {
 			}
 
 			try {
-				setIsLogoLoading(true);
+				// setIsLogoLoading(true);
 				const response = await axios.request(logoOptions);
 				setLogo(response.data.logos[0]);
 				setIsLogoLoading(false);
@@ -99,7 +107,7 @@ const Details = () => {
 			}
 
 			try {
-				setIsCreditLoading(true);
+				// setIsCreditLoading(true);
 				const response = await axios.request(creditOptions);
 				console.log(response.data);
 				setCast(response.data.cast.slice(0, 4));
@@ -126,7 +134,7 @@ const Details = () => {
 			}
 
 			try {
-				setIsVideoLoading(true);
+				// setIsVideoLoading(true);
 				const response = await axios.request(videoOptions);
 				const filterVideos = response.data.results.filter((video: any) => {
 					return (
@@ -142,7 +150,7 @@ const Details = () => {
 			}
 
 			try {
-				setIsSimilarLoading(true);
+				// setIsSimilarLoading(true);
 				const response = await axios.request(similarOptions);
 				setSimilar(response.data.results);
 				setIsSimilarLoading(false);
@@ -152,6 +160,18 @@ const Details = () => {
 		};
 		fetchData();
 	}, [id]);
+
+	useEffect(() => {
+		let closeModal = (e: any) => {
+			if (!ref.current.contains(e.target)) {
+				showSeasonModal(false);
+			}
+		};
+		document.addEventListener("mousedown", closeModal);
+		return () => {
+			document.removeEventListener("mousedown", closeModal);
+		};
+	});
 
 	function toHoursAndMinutes(totalMinutes: number) {
 		const hours = Math.floor(totalMinutes / 60);
@@ -165,6 +185,12 @@ const Details = () => {
 		} else {
 			return (Math.round(num / 100) / 10).toFixed(1) + "k";
 		}
+	}
+
+	function displaySeasonModal(seasonData: Object) {
+		setSeasonData({ ...seasonData });
+		console.log({ ...seasonData });
+		showSeasonModal(!seasonModal);
 	}
 
 	return (
@@ -334,7 +360,7 @@ const Details = () => {
 												direction={"horizontal"}
 												slidesPerView={3}
 												spaceBetween={30}
-												mousewheel={true}
+												mousewheel={videos.length > 3 ? true : false}
 												pagination={{
 													// paginationClickable: true,
 													clickable: true,
@@ -370,17 +396,70 @@ const Details = () => {
 							)
 						)}
 
+						{seasonModal && <SeasonInfo ref={ref} season={seasonData} />}
+
 						{mediaType === "tv" && media.seasons && (
-							<>
+							<div className="season-container">
 								<h1>Seasons</h1>
-							</>
+								<Swiper
+									direction={"horizontal"}
+									slidesPerView={7}
+									spaceBetween={30}
+									mousewheel={media.seasons.length > 7 ? true : false}
+									pagination={{
+										// paginationClickable: true,
+										clickable: true,
+										el: ".swiper-pagination",
+										renderBullet: (index, className) => {
+											return (
+												'<span class="' +
+												className +
+												" " +
+												index +
+												'">' +
+												"" +
+												"</span>"
+											);
+										},
+									}}
+									modules={[Mousewheel, Pagination]}
+									className="mySwiper"
+								>
+									{media.seasons.map((season: any) => {
+										return (
+											<SwiperSlide key={season.id}>
+												<SeasonTab
+													id={season.id}
+													name={season.name}
+													image={`https://image.tmdb.org/t/p/w300${season.poster_path}`}
+													season_number={season.season_number}
+													air_date={season.air_date}
+													episode_count={season.episode_count}
+													displaySeasonModal={() =>
+														displaySeasonModal({
+															image: `https://image.tmdb.org/t/p/w500${season.poster_path}`,
+															seasonNumber: season.season_number,
+															overview: season.overview,
+															episodeCount: season.episode_count,
+															airDate: season.air_date,
+															name: season.name,
+														})
+													}
+													// endYear="2019"
+												/>
+											</SwiperSlide>
+										);
+									})}
+								</Swiper>
+								<div className="swiper-pagination" />
+							</div>
 						)}
 
 						{isSimilarLoading ? (
 							<Loader />
 						) : (
 							<div className="show-tabs">
-								<h2>You May Also Like</h2>
+								<h1>You May Also Like</h1>
 								<MultipleObserver>
 									{similar.map((media: any) => {
 										return (
