@@ -1,7 +1,22 @@
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/navbar.scss";
 
 const Navbar = () => {
+	const [search, setSearch] = useState<String>("");
+	console.log(encodeURIComponent(search.trim()));
+	const navigate = useNavigate();
+
+	function handleKeyDown(e: any) {
+		if (e.key === "Enter") {
+			navigateFunc();
+		}
+	}
+
+	function navigateFunc() {
+		navigate(`/search/${encodeURIComponent(search.trim())}`);
+	}
+
 	return (
 		<nav>
 			<ul>
@@ -24,6 +39,8 @@ const Navbar = () => {
 				id="search"
 				placeholder="Search..."
 				className="nav-search"
+				onChange={(e) => setSearch(e.target.value)}
+				onKeyDown={handleKeyDown}
 			/>
 		</nav>
 	);

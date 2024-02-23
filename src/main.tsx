@@ -9,6 +9,7 @@ import Profile from "./routes/profile.js";
 import ErrorPage from "./error-page.jsx";
 import "./main.scss";
 import Details from "./routes/details.js";
+import Search from "./routes/search.js";
 
 const router = createBrowserRouter([
 	{
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
 			{
 				path: "/details/:media/:id",
 				element: <Details />,
+			},
+			{
+				path: "/search/:id",
+				element: <Search />,
 			},
 		],
 	},

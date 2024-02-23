@@ -85,10 +85,10 @@ const Details = () => {
 	};
 
 	useEffect(() => {
-		// window.scrollTo(0, 0);
+		window.scrollTo(0, 0);
 		const fetchData = async () => {
 			try {
-				// setIsLoading(true);
+				setIsLoading(true);
 				const response = await axios.request(options);
 				setMedia(response.data);
 				console.log(response.data);
@@ -98,7 +98,7 @@ const Details = () => {
 			}
 
 			try {
-				// setIsLogoLoading(true);
+				setIsLogoLoading(true);
 				const response = await axios.request(logoOptions);
 				setLogo(response.data.logos[0]);
 				setIsLogoLoading(false);
@@ -107,7 +107,7 @@ const Details = () => {
 			}
 
 			try {
-				// setIsCreditLoading(true);
+				setIsCreditLoading(true);
 				const response = await axios.request(creditOptions);
 				console.log(response.data);
 				setCast(response.data.cast.slice(0, 4));
@@ -134,7 +134,7 @@ const Details = () => {
 			}
 
 			try {
-				// setIsVideoLoading(true);
+				setIsVideoLoading(true);
 				const response = await axios.request(videoOptions);
 				const filterVideos = response.data.results.filter((video: any) => {
 					return (
@@ -150,7 +150,7 @@ const Details = () => {
 			}
 
 			try {
-				// setIsSimilarLoading(true);
+				setIsSimilarLoading(true);
 				const response = await axios.request(similarOptions);
 				setSimilar(response.data.results);
 				setIsSimilarLoading(false);
