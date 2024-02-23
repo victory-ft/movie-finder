@@ -59,7 +59,7 @@
 			border: none;
 			cursor: pointer;
 			transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-
+			color: $text;
 			&:hover {
 				background-color: $text;
 				color: $background;
@@ -91,26 +91,35 @@
 	display: flex;
 
 	img {
-        object-fit: cover;
+		object-fit: cover;
 		height: 100%;
 		width: 50%;
 	}
 
 	.modal-text {
 		padding: 5px;
-        
-        .modal-span{
-            font-weight: 400;
-            font-size: 1rem;
-        }
+
+		.modal-span {
+			font-weight: 400;
+			font-size: 1rem;
+		}
 	}
-    
 }
 
-
 @media (max-width: $breakpoint-tablet) {
-	.season-container{
-        display: grid;
-        place-content: center;
-    }
+	.season-container {
+		display: grid;
+		place-content: center;
+	}
+
+	.modal-content{
+		margin: auto 15px;
+	}
+
+	.modal-text {
+		.overview {
+			height: calc(100% - 200px);
+			overflow: auto;
+		}
+	}
 }

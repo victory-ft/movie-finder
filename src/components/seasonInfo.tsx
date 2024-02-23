@@ -40,7 +40,7 @@ const SeasonInfo = forwardRef((props: seasonProps, ref) => (
 					</span>
 				</h3>
 				{props.season.overview && (
-					<h3>
+					<h3 className="overview">
 						Overview:{" "}
 						<span className="modal-span">{props.season.overview}</span>
 					</h3>

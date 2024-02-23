@@ -188,68 +188,28 @@
 
 @media (max-width: $breakpoint-tablet) {
 	.details-page {
+
+		.background-image {
+		
+		object-fit: cover;
+		z-index: -1;
+	}
+
 		.media-info {
-			width: calc(100% - 40px);
-			padding: 0 20px;
 			bottom: 0;
-			z-index: 2;
-			color: #fff;
-
-			.media-logo {
-				max-width: 50%;
-				max-height: 15rem;
-				padding: 0 0 10px;
-			}
-
-			.media-docs span {
-				color: #9c9c9c;
-				margin: 1px 5px;
-
-				&:nth-child(1) {
-					margin-left: 0;
-				}
-			}
 
 			.overview {
-				font-size: 1rem;
 				width: 100%;
-			}
-
-			.tagline {
-				font-style: italic;
-				font-size: 1.2rem;
-				font-weight: 200;
 			}
 		}
 
 		&::after {
-			// left: 0;
-			// top: 0;
-			// width: 100%;
-			// height: 100%;
 			background: rgb(0, 0, 0);
 			background: linear-gradient(
 				0deg,
-				rgba(0, 0, 0, 0.7484243697478992) 47%,
-				rgba(255, 255, 255, 0) 68%
+				rgba(0, 0, 0, 0.7484243697478992) 62%,
+				rgba(255, 255, 255, 0) 83%
 			);
 		}
 	}
-
-	// .more-content {
-	// 	// top: 40rem;
-	// 	bottom: 0;
-	// 	padding: 20px;
-
-	// 	.credits {
-	// 		h2 {
-	// 			margin: 4px 0;
-	// 			font-size: 1.3rem;
-	// 			font-weight: 500;
-	// 			.credit-header {
-	// 				font-weight: 700;
-	// 			}
-	// 		}
-	// 	}
-	// }
 }

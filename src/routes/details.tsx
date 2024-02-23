@@ -92,10 +92,10 @@ const Details = () => {
 	};
 
 	useEffect(() => {
-		// window.scrollTo(0, 0);
+		window.scrollTo(0, 0);
 		const fetchData = async () => {
 			try {
-				// setIsLoading(true);
+				setIsLoading(true);
 				const response = await axios.request(options);
 				setMedia(response.data);
 				console.log(response.data);
@@ -105,7 +105,7 @@ const Details = () => {
 			}
 
 			try {
-				// setIsLogoLoading(true);
+				setIsLogoLoading(true);
 				const response = await axios.request(logoOptions);
 				setLogo(response.data.logos[0]);
 				setIsLogoLoading(false);
@@ -114,7 +114,7 @@ const Details = () => {
 			}
 
 			try {
-				// setIsCreditLoading(true);
+				setIsCreditLoading(true);
 				const response = await axios.request(creditOptions);
 				console.log(response.data);
 				setCast(response.data.cast.slice(0, 4));
@@ -141,7 +141,7 @@ const Details = () => {
 			}
 
 			try {
-				// setIsVideoLoading(true);
+				setIsVideoLoading(true);
 				const response = await axios.request(videoOptions);
 				const filterVideos = response.data.results.filter((video: any) => {
 					return (
@@ -157,7 +157,7 @@ const Details = () => {
 			}
 
 			try {
-				// setIsSimilarLoading(true);
+				setIsSimilarLoading(true);
 				const response = await axios.request(similarOptions);
 				setSimilar(response.data.results);
 				setIsSimilarLoading(false);
@@ -368,11 +368,6 @@ const Details = () => {
 												slidesPerView={1}
 												spaceBetween={30}
 												mousewheel={true}
-												freeMode={{
-													enabled: true,
-													sticky: false,
-													momentumBounce: false,
-												}}
 												pagination={{
 													// paginationClickable: true,
 													clickable: true,
@@ -444,14 +439,9 @@ const Details = () => {
 								<h1>Seasons</h1>
 								<Swiper
 									direction={"horizontal"}
-									slidesPerView={1}
+									slidesPerView={2}
 									spaceBetween={20}
 									mousewheel={{ releaseOnEdges: true }}
-									freeMode={{
-										enabled: true,
-										sticky: false,
-										momentumBounce: false,
-									}}
 									pagination={{
 										// paginationClickable: true,
 										clickable: true,
