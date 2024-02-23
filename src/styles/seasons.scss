@@ -16,7 +16,7 @@
 	img {
 		object-fit: contain;
 		height: 100%;
-		width: 100%;
+		min-width: 100%;
 		// -webkit-filter: grayscale(100%);
 		// filter: grayscale(100%);
 	}
@@ -107,12 +107,7 @@
 }
 
 @media (max-width: $breakpoint-tablet) {
-	.season-container {
-		display: grid;
-		place-content: center;
-	}
-
-	.modal-content{
+	.modal-content {
 		margin: auto 15px;
 	}
 

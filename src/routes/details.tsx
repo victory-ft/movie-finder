@@ -98,7 +98,7 @@ const Details = () => {
 				setIsLoading(true);
 				const response = await axios.request(options);
 				setMedia(response.data);
-				console.log(response.data);
+				// console.log(response.data);
 				setIsLoading(false);
 			} catch (error) {
 				console.error(error);
@@ -116,7 +116,7 @@ const Details = () => {
 			try {
 				setIsCreditLoading(true);
 				const response = await axios.request(creditOptions);
-				console.log(response.data);
+				// console.log(response.data);
 				setCast(response.data.cast.slice(0, 4));
 				const filterWriter = response.data.crew.filter((writer: any) => {
 					return writer.department === "Writing";
@@ -149,7 +149,7 @@ const Details = () => {
 						(video.site === "YouTube" && video.type === "Clip")
 					);
 				});
-				console.log(filterVideos.slice(0, 3));
+				// console.log(filterVideos.slice(0, 3));
 				setVideos(filterVideos);
 				setIsVideoLoading(false);
 			} catch (error) {
@@ -196,7 +196,7 @@ const Details = () => {
 
 	function displaySeasonModal(seasonData: Object) {
 		setSeasonData({ ...seasonData });
-		console.log({ ...seasonData });
+		// console.log({ ...seasonData });
 		showSeasonModal(!seasonModal);
 	}
 

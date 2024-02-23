@@ -4,7 +4,6 @@ import "../styles/navbar.scss";
 
 const Navbar = () => {
 	const [search, setSearch] = useState<String>("");
-	console.log(encodeURIComponent(search.trim()));
 	const navigate = useNavigate();
 
 	function handleKeyDown(e: any) {
