@@ -48,3 +48,11 @@ nav {
 		font-family: "Outfit";
 	}
 }
+
+@media (max-width: $breakpoint-tablet) {
+	nav{
+		ul{
+			display: none;
+		}
+	}
+}

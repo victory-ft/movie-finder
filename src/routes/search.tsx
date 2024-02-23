@@ -29,7 +29,7 @@ const Search = () => {
 				setIsLoading(true);
 				const response = await axios.request(options);
 				const filterResults = response.data.results.filter((result: any) => {
-					return result.media_type === "tv" || result.site === "movie";
+					return result.media_type === "tv" || result.media_type === "movie";
 				});
 				setResults(filterResults);
 				console.log(filterResults);
@@ -44,14 +44,14 @@ const Search = () => {
 	return (
 		<>
 			<h1 className="home-header">
-				<span>C</span>
-				<span>I</span>
-				<span>N</span>
-				<span>E</span>
-				<span>X</span>
-				<span>I</span>
+				<span>O</span>
 				<span>T</span>
-				<span>Y</span>
+				<span>M</span>
+				<span>O</span>
+				<span>V</span>
+				<span>I</span>
+				<span>E</span>
+				<span>S</span>
 			</h1>
 
 			{isLoading ? (

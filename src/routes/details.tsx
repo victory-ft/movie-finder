@@ -85,10 +85,10 @@ const Details = () => {
 	};
 
 	useEffect(() => {
-		window.scrollTo(0, 0);
+		// window.scrollTo(0, 0);
 		const fetchData = async () => {
 			try {
-				setIsLoading(true);
+				// setIsLoading(true);
 				const response = await axios.request(options);
 				setMedia(response.data);
 				console.log(response.data);
@@ -98,7 +98,7 @@ const Details = () => {
 			}
 
 			try {
-				setIsLogoLoading(true);
+				// setIsLogoLoading(true);
 				const response = await axios.request(logoOptions);
 				setLogo(response.data.logos[0]);
 				setIsLogoLoading(false);
@@ -107,7 +107,7 @@ const Details = () => {
 			}
 
 			try {
-				setIsCreditLoading(true);
+				// setIsCreditLoading(true);
 				const response = await axios.request(creditOptions);
 				console.log(response.data);
 				setCast(response.data.cast.slice(0, 4));
@@ -134,7 +134,7 @@ const Details = () => {
 			}
 
 			try {
-				setIsVideoLoading(true);
+				// setIsVideoLoading(true);
 				const response = await axios.request(videoOptions);
 				const filterVideos = response.data.results.filter((video: any) => {
 					return (
@@ -150,7 +150,7 @@ const Details = () => {
 			}
 
 			try {
-				setIsSimilarLoading(true);
+				// setIsSimilarLoading(true);
 				const response = await axios.request(similarOptions);
 				setSimilar(response.data.results);
 				setIsSimilarLoading(false);
@@ -358,9 +358,14 @@ const Details = () => {
 										<div className="youtube-vids">
 											<Swiper
 												direction={"horizontal"}
-												slidesPerView={3}
+												slidesPerView={1}
 												spaceBetween={30}
-												mousewheel={videos.length > 3 ? true : false}
+												mousewheel={true}
+												freeMode={{
+													enabled: true,
+													sticky: false,
+													momentumBounce: false,
+												}}
 												pagination={{
 													// paginationClickable: true,
 													clickable: true,
@@ -377,6 +382,35 @@ const Details = () => {
 												}}
 												modules={[Mousewheel, Pagination]}
 												className="mySwiper"
+												breakpoints={{
+													// 450: {
+													// 	slidesPerView: 2,
+													// },
+													650: {
+														slidesPerView: 2,
+													},
+													1100: {
+														slidesPerView: 3,
+													},
+													1800: {
+														slidesPerView: 4,
+													},
+													// 1320: {
+													// 	slidesPerView: 6,
+													// },
+													// 1520: {
+													// 	slidesPerView: 7,
+													// },
+													// 1720: {
+													// 	slidesPerView: 8,
+													// },
+													// 1920: {
+													// 	slidesPerView: 9,
+													// },
+													// 2250: {
+													// 	slidesPerView: 10,
+													// },
+												}}
 											>
 												{videos.map((video: any) => {
 													return (
@@ -403,9 +437,14 @@ const Details = () => {
 								<h1>Seasons</h1>
 								<Swiper
 									direction={"horizontal"}
-									slidesPerView={7}
-									spaceBetween={30}
-									mousewheel={media.seasons.length > 7 ? true : false}
+									slidesPerView={1}
+									spaceBetween={20}
+									mousewheel={{ releaseOnEdges: true }}
+									freeMode={{
+										enabled: true,
+										sticky: false,
+										momentumBounce: false,
+									}}
 									pagination={{
 										// paginationClickable: true,
 										clickable: true,
@@ -423,6 +462,42 @@ const Details = () => {
 										},
 									}}
 									modules={[Mousewheel, Pagination]}
+									breakpoints={{
+										450: {
+											slidesPerView: 2,
+										},
+										650: {
+											slidesPerView: 3,
+										},
+
+										850: {
+											slidesPerView: 4,
+										},
+
+										1070: {
+											slidesPerView: 5,
+										},
+
+										1320: {
+											slidesPerView: 6,
+										},
+
+										1520: {
+											slidesPerView: 7,
+										},
+
+										1720: {
+											slidesPerView: 8,
+										},
+
+										1920: {
+											slidesPerView: 9,
+										},
+
+										2250: {
+											slidesPerView: 10,
+										},
+									}}
 									className="mySwiper"
 								>
 									{media.seasons.map((season: any) => {

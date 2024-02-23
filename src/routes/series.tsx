@@ -126,14 +126,14 @@ const Series = () => {
 	return (
 		<>
 			<h1 className="home-header">
-				<span>C</span>
-				<span>I</span>
-				<span>N</span>
-				<span>E</span>
-				<span>X</span>
-				<span>I</span>
+				<span>O</span>
 				<span>T</span>
-				<span>Y</span>
+				<span>M</span>
+				<span>O</span>
+				<span>V</span>
+				<span>I</span>
+				<span>E</span>
+				<span>S</span>
 			</h1>
 
 			{isActionLoading ? (

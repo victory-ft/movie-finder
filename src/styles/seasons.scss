@@ -14,7 +14,7 @@
 	width: 12rem;
 
 	img {
-		object-fit: cover;
+		object-fit: contain;
 		height: 100%;
 		width: 100%;
 		// -webkit-filter: grayscale(100%);
@@ -91,6 +91,7 @@
 	display: flex;
 
 	img {
+        object-fit: cover;
 		height: 100%;
 		width: 50%;
 	}
@@ -104,4 +105,12 @@
         }
 	}
     
+}
+
+
+@media (max-width: $breakpoint-tablet) {
+	.season-container{
+        display: grid;
+        place-content: center;
+    }
 }

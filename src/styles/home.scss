@@ -224,9 +224,35 @@
 	}
 }
 
-.error-msg{
+.error-msg {
 	text-align: center;
 	// width: 100%;
 	color: #ff0000;
 	// background-color: aqua;
+}
+
+@media (max-width: $breakpoint-tablet) {
+	.home-header {
+		font-size: 3rem;
+	}
+	.home-tabs {
+		display: none;
+	}
+
+	.show-tabs {
+		margin: 1rem;
+		.tab-container {
+			justify-content: center !important;
+		}
+	}
+}
+
+@media (max-width: $breakpoint-phone-small) {
+	.show-tabs {
+		.tab-container {
+			img.poster {
+				min-height: 100%;
+			}
+		}
+	}
 }
