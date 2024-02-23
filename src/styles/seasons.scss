@@ -98,6 +98,10 @@
 
 	.modal-text {
 		padding: 5px;
+		.overview {
+			height: calc(100% - 200px);
+			overflow: auto;
+		}
 
 		.modal-span {
 			font-weight: 400;
@@ -110,11 +114,12 @@
 	.modal-content {
 		margin: auto 15px;
 	}
+}
 
-	.modal-text {
-		.overview {
-			height: calc(100% - 200px);
-			overflow: auto;
+@media (max-width: $breakpoint-phone-medium) {
+	.modal-content {
+		img {
+			display: none;
 		}
 	}
 }

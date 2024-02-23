@@ -253,7 +253,7 @@ const Details = () => {
 							</span>
 						</div>
 						<p className="overview">{media.overview}</p>
-						{media.tagline && <p className="tagline">{`"${media.tagline}"`}</p>}
+						{media.tagline && <p className="tagline">{`${media.tagline}`}</p>}
 					</div>
 					<div className="more-content">
 						{isCreditLoading ? (
@@ -369,7 +369,6 @@ const Details = () => {
 												spaceBetween={30}
 												mousewheel={true}
 												pagination={{
-													// paginationClickable: true,
 													clickable: true,
 													el: ".swiper-pagination",
 													renderBullet: (index, className) => {
@@ -385,9 +384,6 @@ const Details = () => {
 												modules={[Mousewheel, Pagination]}
 												className="mySwiper"
 												breakpoints={{
-													// 450: {
-													// 	slidesPerView: 2,
-													// },
 													650: {
 														slidesPerView: 2,
 													},
@@ -397,21 +393,6 @@ const Details = () => {
 													1800: {
 														slidesPerView: 4,
 													},
-													// 1320: {
-													// 	slidesPerView: 6,
-													// },
-													// 1520: {
-													// 	slidesPerView: 7,
-													// },
-													// 1720: {
-													// 	slidesPerView: 8,
-													// },
-													// 1920: {
-													// 	slidesPerView: 9,
-													// },
-													// 2250: {
-													// 	slidesPerView: 10,
-													// },
 												}}
 											>
 												{videos.map((video: any) => {
@@ -443,7 +424,6 @@ const Details = () => {
 									spaceBetween={20}
 									mousewheel={{ releaseOnEdges: true }}
 									pagination={{
-										// paginationClickable: true,
 										clickable: true,
 										el: ".swiper-pagination",
 										renderBullet: (index, className) => {
