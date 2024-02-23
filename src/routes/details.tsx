@@ -16,7 +16,7 @@ import "../styles/details.scss";
 import SeasonInfo from "../components/seasonInfo";
 
 const Details = () => {
-	const auth: string = AUTH;
+	// const auth: string = AUTH;
 
 	let { id, media: mediaType } = useParams();
 
@@ -44,7 +44,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization: auth,
+			Authorization: process.env.AUTH,
 		},
 	};
 
@@ -53,7 +53,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/credits?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization: auth,
+			Authorization: process.env.AUTH,
 		},
 	};
 
@@ -62,7 +62,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/images?include_image_language=en%2Cnull`,
 		headers: {
 			accept: "application/json",
-			Authorization: auth,
+			Authorization: process.env.AUTH,
 		},
 	};
 
@@ -71,7 +71,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/videos?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization: auth,
+			Authorization: process.env.AUTH,
 		},
 	};
 
@@ -80,7 +80,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/recommendations?language=en-US&page=1`,
 		headers: {
 			accept: "application/json",
-			Authorization: auth,
+			Authorization: process.env.AUTH,
 		},
 	};
 

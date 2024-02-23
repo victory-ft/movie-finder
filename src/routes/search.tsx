@@ -4,18 +4,18 @@ import ShowTab from "../components/showtab";
 import Loader from "../components/loader";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import AUTH from "../../variables";
+// import AUTH from "../../variables";
 
 const Search = () => {
 	let { id: searchTerm } = useParams();
-	const auth: string = AUTH;
+	// const auth: string = AUTH;
 
 	const options = {
 		method: "GET",
 		url: `https://api.themoviedb.org/3/search/multi?query=${searchTerm}&include_adult=false&language=en-US&page=1`,
 		headers: {
 			accept: "application/json",
-			Authorization: auth,
+			Authorization: process.env.AUTH,
 		},
 	};
 
