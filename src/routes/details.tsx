@@ -361,7 +361,7 @@ const Details = () => {
 												direction={"horizontal"}
 												slidesPerView={1}
 												spaceBetween={30}
-												mousewheel={true}
+												mousewheel={{ releaseOnEdges: true }}
 												pagination={{
 													clickable: true,
 													el: ".swiper-pagination",

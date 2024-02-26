@@ -1,14 +1,20 @@
 @import "../variables";
 
-nav {
+.nav-container {
+	position: relative;
+	// overflow: hidden;
 	position: sticky;
 	top: 0;
+		z-index: 3;
+
+}
+
+nav {
 	background-color: $background;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 1rem 5rem;
-	z-index: 3;
 
 	ul {
 		display: flex;
@@ -41,18 +47,90 @@ nav {
 	}
 
 	.nav-search {
+		height: 100%;
+		min-width: 30%;
 		padding: 8px 20px;
 		border: 1px solid $secondary;
 		outline: none;
 		border-radius: 20px;
 		font-family: "Outfit";
+		font-size: 1rem;
+	}
+
+	.nav-menu-btn {
+		width: 2.5rem;
+		background-color: none;
+		border: none;
+		display: none;
+		img {
+			width: 100%;
+		}
 	}
 }
 
+.mobile-nav {
+	display: none;
+	overflow: hidden;
+	background-color: $background;
+	position: absolute;
+	top: 60px;
+	left: 100%;
+	width: 100%;
+	z-index: 999;
+	transition: left 0.3s ease-in-out;
+}
+
 @media (max-width: $breakpoint-tablet) {
-	nav{
-		ul{
+	nav {
+		padding: 1rem;
+		ul {
 			display: none;
+		}
+		.nav-menu-btn {
+			display: block;
+		}
+	}
+
+	.mobile-nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			flex: 1 1 1;
+			list-style: none;
+			padding-left: 0;
+
+			li {
+				margin: 20px 10px;
+			}
+
+			a {
+				color: $secondary;
+				text-decoration: none;
+				padding: 5px 15px;
+				border: 1px solid $secondary;
+				border-radius: 20px;
+				font-weight: 600;
+				transition: 0.2s background-color ease-in-out, 0.2s color ease-in-out;
+
+				&.active,
+				&:hover {
+					background-color: $secondary;
+					color: $background;
+				}
+			}
+		}
+
+		&.active {
+			translate: 0 !important;
+			left: 0;
 		}
 	}
 }

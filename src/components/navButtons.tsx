@@ -1,3 +1,5 @@
+import {} from "react";
+
 import { useSwiper } from "swiper/react";
 import arrowLeft from "/icons/arrow-left-circle.svg";
 import arrowRight from "/icons/arrow-right-circle.svg";
