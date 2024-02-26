@@ -6,7 +6,7 @@ interface Props {
 }
 
 const MultipleObserver = ({ children }: Props) => {
-	const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
+	const { ref, inView } = useInView({ triggerOnce: true, threshold: 0 });
 
 	return (
 		<>

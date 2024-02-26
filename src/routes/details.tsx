@@ -9,6 +9,7 @@ import YouTubeEmbed from "../components/youtubeEmbed";
 import ShowTab from "../components/showtab";
 import SeasonTab from "../components/seasonTab";
 import MultipleObserver from "../components/multipleObserver";
+import NavButtons from "../components/navButtons";
 import axios from "axios";
 import AUTH from "../../variables";
 import star from "/icons/star.svg";
@@ -16,7 +17,7 @@ import "../styles/details.scss";
 import SeasonInfo from "../components/seasonInfo";
 
 const Details = () => {
-	// const auth: string = AUTH;
+	const auth: string = AUTH;
 
 	let { id, media: mediaType } = useParams();
 
@@ -37,27 +38,23 @@ const Details = () => {
 
 	const [seasonData, setSeasonData] = useState({});
 
-	const ref = useRef<any>(null);
+	const ref = useRef<any>();
 
 	const options = {
 		method: "GET",
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization:
-				"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y",
+			Authorization: auth,
 		},
 	};
-
-	// console.log("Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y" + "sjsjsj");
 
 	const creditOptions = {
 		method: "GET",
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/credits?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization:
-				"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y",
+			Authorization: auth,
 		},
 	};
 
@@ -66,8 +63,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/images?include_image_language=en%2Cnull`,
 		headers: {
 			accept: "application/json",
-			Authorization:
-				"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y",
+			Authorization: auth,
 		},
 	};
 
@@ -76,8 +72,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/videos?language=en-US`,
 		headers: {
 			accept: "application/json",
-			Authorization:
-				"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y",
+			Authorization: auth,
 		},
 	};
 
@@ -86,8 +81,7 @@ const Details = () => {
 		url: `https://api.themoviedb.org/3/${mediaType}/${id}/recommendations?language=en-US&page=1`,
 		headers: {
 			accept: "application/json",
-			Authorization:
-				"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDQyMmZmNzJhOTcyMTJjYTAyY2FjZjkyZjdhNDcyYiIsInN1YiI6IjY1Y2NkNTRiZTI2M2JiMDE4NjY5NTUxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qmRyCr0sT_RMtVTAIF5SuWYbzzrxWq1HvpWKW4JvQ8Y",
+			Authorization: auth,
 		},
 	};
 
@@ -170,7 +164,7 @@ const Details = () => {
 
 	useEffect(() => {
 		let closeModal = (e: any) => {
-			if (!ref.current.contains(e.target)) {
+			if (ref.current && !ref.current.contains(e.target)) {
 				showSeasonModal(false);
 			}
 		};
@@ -178,7 +172,7 @@ const Details = () => {
 		return () => {
 			document.removeEventListener("mousedown", closeModal);
 		};
-	});
+	}, []);
 
 	function toHoursAndMinutes(totalMinutes: number) {
 		const hours = Math.floor(totalMinutes / 60);
@@ -405,6 +399,7 @@ const Details = () => {
 														</SwiperSlide>
 													);
 												})}
+												<NavButtons />
 											</Swiper>
 											<div className="swiper-pagination" />
 										</div>
@@ -420,7 +415,7 @@ const Details = () => {
 								<h1>Seasons</h1>
 								<Swiper
 									direction={"horizontal"}
-									slidesPerView={2}
+									slidesPerView={1}
 									spaceBetween={20}
 									mousewheel={{ releaseOnEdges: true }}
 									pagination={{
@@ -440,7 +435,7 @@ const Details = () => {
 									}}
 									modules={[Mousewheel, Pagination]}
 									breakpoints={{
-										450: {
+										400: {
 											slidesPerView: 2,
 										},
 										650: {
