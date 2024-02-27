@@ -15,6 +15,7 @@ import AUTH from "../../variables";
 import star from "/icons/star.svg";
 import "../styles/details.scss";
 import SeasonInfo from "../components/seasonInfo";
+import Footer from "../components/footer";
 
 const Details = () => {
 	const auth: string = AUTH;
@@ -528,6 +529,7 @@ const Details = () => {
 								</MultipleObserver>
 							</div>
 						)}
+						<Footer />
 					</div>
 				</main>
 			)}

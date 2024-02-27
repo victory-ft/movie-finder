@@ -4,6 +4,7 @@ import Loader from "../components/loader";
 import axios from "axios";
 import ShowTab from "../components/showtab";
 import options from "../apiOptions/apiOptions";
+import Footer from "../components/footer";
 
 const Movies = () => {
 	const apiOptions: any = options;
@@ -340,6 +341,7 @@ const Movies = () => {
 					</MultipleObserver>
 				</div>
 			)}
+			<Footer />
 		</>
 	);
 };

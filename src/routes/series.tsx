@@ -5,6 +5,7 @@ import MultipleObserver from "../components/multipleObserver";
 import axios from "axios";
 import ShowTab from "../components/showtab";
 import options from "../apiOptions/apiOptions";
+import Footer from "../components/footer";
 
 const Series = () => {
 	const apiOptions: any = options;
@@ -388,6 +389,7 @@ const Series = () => {
 					</MultipleObserver>
 				</div>
 			)}
+			<Footer />
 		</>
 	);
 };

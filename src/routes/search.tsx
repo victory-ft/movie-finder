@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MultipleObserver from "../components/multipleObserver";
 import ShowTab from "../components/showtab";
 import Loader from "../components/loader";
+import Footer from "../components/footer";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import AUTH from "../../variables";

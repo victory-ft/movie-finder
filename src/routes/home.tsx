@@ -4,6 +4,7 @@ import MultipleObserver from "../components/multipleObserver";
 import Loader from "../components/loader";
 import axios from "axios";
 import ShowTab from "../components/showtab";
+import Footer from "../components/footer";
 import arrowIcon from "/icons/arrow-right.svg";
 import options from "../apiOptions/apiOptions";
 
@@ -177,6 +178,7 @@ const Home = () => {
 					</MultipleObserver>
 				</div>
 			)}
+			<Footer />
 		</main>
 	);
 };
