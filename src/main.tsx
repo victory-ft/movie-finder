@@ -5,7 +5,7 @@ import Root from "./routes/root.js";
 import Home from "./routes/home.js";
 import Movies from "./routes/movies.js";
 import Series from "./routes/series.js";
-import Profile from "./routes/profile.js";
+import About from "./routes/about.js";
 import ErrorPage from "./error-page.jsx";
 import "./main.scss";
 import Details from "./routes/details.js";
@@ -30,8 +30,8 @@ const router = createBrowserRouter([
 				element: <Series />,
 			},
 			{
-				path: "/profile",
-				element: <Profile />,
+				path: "/about",
+				element: <About />,
 			},
 			{
 				path: "/details/:media/:id",

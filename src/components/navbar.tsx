@@ -32,7 +32,7 @@ const Navbar = () => {
 						<NavLink to={`series`}>Series</NavLink>
 					</li>
 					<li>
-						<NavLink to={`profile`}>Profile</NavLink>
+						<NavLink to={`about`}>About</NavLink>
 					</li>
 				</ul>
 				<input
