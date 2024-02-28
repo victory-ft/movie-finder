@@ -66,8 +66,8 @@ const Navbar = () => {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to={`profile`} onClick={() => setShowMenu(false)}>
-							Profile
+						<NavLink to={`about`} onClick={() => setShowMenu(false)}>
+							About
 						</NavLink>
 					</li>
 				</ul>
