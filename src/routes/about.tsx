@@ -16,7 +16,7 @@ const About = () => {
 				This site makes use of the TMDb API but is not endorsed or certified by
 				TMDb.
 			</p>
-			<Footer className="foott" />
+			<Footer />
 		</main>
 	);
 };
