@@ -68,31 +68,6 @@ const Home = () => {
 				<span>E</span>
 				<span>S</span>
 			</h1>
-			<div className="home-tabs">
-				<div className="home-tab">
-					<div className="tab-pill">My List</div>
-					<div className="tab-text">
-						<p>See your list</p>
-						<p>with one click</p>
-						<img src={arrowIcon} alt="arrow" />
-					</div>
-				</div>
-				<div className="home-tab">
-					<div className="tab-text">
-						<p>See what's new</p>
-						<p>and add to your list</p>
-						<img src={arrowIcon} alt="arrow" />
-					</div>
-					<div className="tab-pill">New</div>
-				</div>
-				<div className="home-tab">
-					<div className="tab-pill">Soon</div>
-					<div className="tab-text">
-						<p>See what's coming soon</p>
-						<img src={arrowIcon} alt="arrow" />
-					</div>
-				</div>
-			</div>
 			{isLoading ? (
 				<Loader />
 			) : (

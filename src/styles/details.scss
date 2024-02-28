@@ -178,7 +178,7 @@
 		button {
 			background: none;
 			border: none;
-
+			cursor: pointer;
 			img {
 				width: 2rem;
 			}
@@ -287,15 +287,4 @@
 			}
 		}
 	}
-}
-
-.embla {
-	overflow: hidden;
-}
-.embla__container {
-	display: flex;
-}
-.embla__slide {
-	flex: 0 0 100%;
-	min-width: 0;
 }
