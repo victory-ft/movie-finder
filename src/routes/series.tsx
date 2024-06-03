@@ -143,9 +143,6 @@ const Series = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Action & Adventure</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<div
 						className={`tab-container sh ${inView ? "in-view" : ""}`}
@@ -174,9 +171,6 @@ const Series = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Animation</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{animation.map((movie: any) => {
@@ -202,9 +196,6 @@ const Series = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Comedy</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{comedy.map((movie: any) => {
@@ -230,9 +221,6 @@ const Series = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Drama</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{drama.map((movie: any) => {
@@ -258,9 +246,6 @@ const Series = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Documentary</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{documentary.map((movie: any) => {
@@ -286,9 +271,6 @@ const Series = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Family</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{family.map((movie: any) => {
@@ -314,9 +296,6 @@ const Series = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Sci-Fi & Fantasy</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{science.map((movie: any) => {
@@ -341,9 +320,6 @@ const Series = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>News</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{news.map((movie: any) => {
@@ -368,9 +344,6 @@ const Series = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Soap Opera</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{soap.map((movie: any) => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import menu from "/icons/menu.svg";
 import "../styles/navbar.scss";
@@ -14,8 +14,11 @@ const Navbar = () => {
 		}
 	}
 
+	const ref: any = useRef();
+
 	function navigateFunc() {
 		navigate(`/search/${encodeURIComponent(search.trim())}`);
+		ref.current.blur();
 	}
 
 	return (
@@ -36,6 +39,7 @@ const Navbar = () => {
 					</li>
 				</ul>
 				<input
+					ref={ref}
 					type="search"
 					name="search"
 					id="search"

@@ -124,9 +124,6 @@ const Movies = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Action</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{action.map((movie: any) => {
@@ -152,9 +149,6 @@ const Movies = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Adventure</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{adventure.map((movie: any) => {
@@ -180,9 +174,6 @@ const Movies = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Animation</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{animation.map((movie: any) => {
@@ -208,9 +199,6 @@ const Movies = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Comedy</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{comedy.map((movie: any) => {
@@ -236,9 +224,6 @@ const Movies = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Drama</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{drama.map((movie: any) => {
@@ -264,9 +249,6 @@ const Movies = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Fantasy</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{fantasy.map((movie: any) => {
@@ -292,9 +274,6 @@ const Movies = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Romance</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{romance.map((movie: any) => {
@@ -320,9 +299,6 @@ const Movies = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Science Fiction</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{science.map((movie: any) => {

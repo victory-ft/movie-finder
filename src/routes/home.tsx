@@ -74,9 +74,6 @@ const Home = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Popular Movies</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{movies.map((movie: any) => {
@@ -101,9 +98,6 @@ const Home = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Popular TV Shows</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{tvShows.map((show: any) => {
@@ -128,9 +122,6 @@ const Home = () => {
 				<div className="show-tabs">
 					<div className="tab-info">
 						<h2>Trending</h2>
-						<button className="secondary">
-							<p>See all</p>
-						</button>
 					</div>
 					<MultipleObserver>
 						{trending.map((show: any) => {
